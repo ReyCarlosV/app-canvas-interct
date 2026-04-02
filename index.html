@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animaciones Canvas 2D</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" href="data:," type="image/x-icon">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <div id="startOverlay" class="start-overlay d-flex flex-column justify-content-center align-items-center">
+        <div class="glass-panel text-center p-5 shadow-lg">
+            <h1 class="text-white mb-3 fw-bold tracking-wide">🪐 Modelos de Colisión</h1>
+            <p class="text-white-50 mb-5 fs-5">Selecciona cuántos círculos deseas para iniciar el juego:</p>
+
+            <div
+                class="d-flex align-items-center justify-content-center mb-5 bg-dark bg-opacity-50 p-3 rounded-pill border border-secondary border-opacity-25">
+                <label for="overlaySlider" class="text-light me-3 mb-0 fw-semibold fs-5">
+                    Círculos: <span id="overlayNumDisplay" class="badge bg-primary rounded-pill ms-2 fs-5">15</span>
+                </label>
+                <input type="range" class="form-range custom-range" id="overlaySlider" min="1" max="200" step="1"
+                    value="15" style="width: 250px;">
+            </div>
+
+            <button id="btnStart"
+                class="btn btn-primary btn-lg rounded-pill px-5 py-3 fw-bold shadow-lg fs-5 start-btn">
+                Comenzar Juego ✨
+            </button>
+        </div>
+    </div>
+
+    <div id="victoryOverlay" class="start-overlay d-flex flex-column justify-content-center align-items-center" style="opacity: 0; visibility: hidden;">
+        <div class="glass-panel text-center p-5 shadow-lg">
+            <h1 class="text-warning mb-3 fw-bold tracking-wide">🏆 ¡Felicidades!</h1>
+            <p class="text-white-50 mb-4 fs-5">Has completado los 5 niveles demostrando grandes reflejos.</p>
+            
+            <h2 class="text-light mb-5 fw-bold">Puntuación Final: <span id="finalScoreDisplay" class="text-warning fs-1">0</span></h2>
+            
+            <button id="btnRestart" class="btn btn-success btn-lg rounded-pill px-5 py-3 fw-bold shadow-lg fs-5 start-btn">
+                Volver al Menú 🔄
+            </button>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm glass-nav">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <span class="fs-4 fw-bold me-2">🪐</span>
+                <span class="fs-5 fw-semibold tracking-wide">Modelos de Colisión</span>
+            </a>
+
+        <div class="d-flex ms-auto gap-3">
+            <div
+                class="d-flex align-items-center bg-dark bg-opacity-50 px-4 py-2 rounded-pill border border-info border-opacity-50 shadow-sm">
+                <span class="text-light fw-bold fs-5 me-2">Nivel:</span>
+                <span id="levelDisplay" class="text-info fw-bold fs-4">1</span>
+            </div>
+
+            <div
+                class="d-flex align-items-center bg-dark bg-opacity-50 px-4 py-2 rounded-pill border border-warning border-opacity-50 shadow-sm">
+                <span class="text-light fw-bold fs-5 me-2">Puntuación:</span>
+                <span id="scoreDisplay" class="text-warning fw-bold fs-4">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow-1 d-flex flex-column justify-content-center align-items-center p-3 p-md-5">
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+    </main>
+
+    <footer class="text-white text-center py-3 mt-auto shadow-lg glass-footer">
+        <div class="container">
+            <p class="mb-0 text-white-50 small">
+                Desarrollado con 💻 por <span class="text-white fw-bold">Carlos Valle Suarez</span> | &copy; 2026
+            </p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
