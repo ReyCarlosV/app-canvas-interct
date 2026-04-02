@@ -7,7 +7,7 @@ body {
     
     /* Degradado de fondo elegante como respaldo por si no hay imagen */
     background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-    background-image: url(''); /* Coloca aquí tu URL */
+    background-image: url('/assets/image/fondo.jpg'); /* Coloca aquí tu URL */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
